@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI Autonomous Farm Village 3D | 1in8b Life Edition</title>
+    <title>AI Autonomous Farm Village 3D | Life Edition</title>
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Three.js & OrbitControls -->
@@ -97,7 +97,7 @@
                 </div>
                 <div>
                     <div class="flex items-center gap-1.5">
-                        <h1 class="font-bold text-sm leading-tight text-amber-950">1in8b FARM</h1>
+                        <h1 class="font-bold text-sm leading-tight text-amber-950">FARM</h1>
                         <span id="ui-era-badge" class="px-1.5 py-0.5 rounded-md bg-emerald-600 text-white text-[10px] font-bold">ยุคที่ 1</span>
                     </div>
                     <div id="ui-village-title" class="text-[11px] font-semibold text-amber-800">หมู่บ้านเริ่มต้น (เกาะ 3x3)</div>
@@ -239,7 +239,7 @@
         </div>
     </div>
 
-    <!-- Bottom Right: 1in8b Life Stream (AI Thoughts, NPC Conversations & Village Log) -->
+    <!-- Bottom Right: Life Stream (AI Thoughts, NPC Conversations & Village Log) -->
     <aside class="absolute bottom-3 right-3 z-20 w-[calc(100vw-24px)] sm:w-[370px] h-[235px] sm:h-[275px] village-panel rounded-3xl flex flex-col overflow-hidden pointer-events-auto">
         <!-- Log Header & Filter Tabs -->
         <div class="px-3 py-2 bg-amber-900/10 border-b border-amber-900/20 flex items-center justify-between gap-1">
@@ -306,7 +306,7 @@
                 freeCam: "Free Cam",
                 blessRain: "Summon Rain",
                 blessGift: "Gift +50🪙",
-                lifeStream: "1in8b Life & AI Thoughts",
+                lifeStream: "Life & AI Thoughts",
                 sunny: "Sunny & Pleasant",
                 rainy: "Gentle Rain (Auto-Watering)",
                 night: "Peaceful Starry Night"
@@ -1260,7 +1260,7 @@
          * 5. AUTONOMOUS AI VILLAGE SIMULATION + PERSISTENT SAVE/LOAD ENGINE
          * ============================================================================
          */
-        const STORAGE_KEY = 'ai_farm_village_1in8b_save_v1';
+        const STORAGE_KEY = 'ai_farm_village_save_v1';
 
         class AutonomousVillageGame {
             constructor() {
@@ -1309,7 +1309,7 @@
                 this.addVillager(VILLAGER_PROFILES[0], -1.5, 2.5);
                 this.addPet({ id: 'dog1', name: 'ปังปอนด์', type: 'dog', x: 1.5, z: 2.8, tx: 2, tz: 3, facing: 0 });
 
-                this.pushLog('build', '🌱 ยินดีต้อนรับสู่หมู่บ้าน 1in8b Farm! AI เริ่มวางแผนพัฒนาฟาร์มอัตโนมัติแล้ว');
+                this.pushLog('build', '🌱 ยินดีต้อนรับสู่หมู่บ้าน! AI เริ่มวางแผนพัฒนาฟาร์มอัตโนมัติแล้ว');
                 this.pushLog('thought', '💭 [มะลิ] เริ่มต้นจากแปลง 3x3 ก่อน เก็บเงินสร้างโรงครัวกับบ้านพักให้ได้!');
                 this.saveProgress();
             }
@@ -1636,7 +1636,7 @@
                 npc.energy = Math.max(0, npc.energy - dt * 1.45);
                 npc.hunger = Math.max(0, npc.hunger - dt * 1.25);
 
-                // Autonomous Inner Thoughts (1in8b Life Mind Engine)
+                // Autonomous Inner Thoughts (Life Mind Engine)
                 npc.thoughtCooldown -= dt;
                 if (npc.thoughtCooldown <= 0) {
                     npc.thoughtCooldown = 11 + Math.random() * 9;
@@ -2115,7 +2115,7 @@
                 const completedCount = VILLAGE_MILESTONES.filter(m => state.isMilestoneDone(m.id)).length;
                 const era = Math.min(5, Math.floor(completedCount / 2) + 1);
                 document.getElementById('ui-era-badge').textContent = `ยุคที่ ${era}`;
-                document.getElementById('ui-village-title').textContent = `หมู่บ้าน 1in8b (เกาะ ${dim}x${dim})`;
+                document.getElementById('ui-village-title').textContent = `หมู่บ้าน (เกาะ ${dim}x${dim})`;
 
                 // Active Construction Pill & Next AI Milestone Goal
                 const constPill = document.getElementById('ui-construction-pill');
